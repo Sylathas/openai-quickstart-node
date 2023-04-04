@@ -13,22 +13,39 @@
   font-weight: bold;
   font-style: normal;
 }
+
+.total {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  top: 0;
+}
+
 .main,
 .main input {
   font-size: 16px;
   line-height: 24px;
   color: #353740;
   font-family: "ColfaxAI", Helvetica, sans-serif;
+  z-index: 2;
 }
 .main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 60px;
+  justify-content: space-evenly;
+  height: 100%;
 }
 .main .icon {
-  width: 34px;
+  width: 30%;
+  perspective: 15px;
 }
+
 .main h3 {
   font-size: 32px;
   line-height: 40px;
@@ -39,29 +56,73 @@
 .main form {
   display: flex;
   flex-direction: column;
-  width: 320px;
+  width: 600px;
 }
 .main input[type="text"] {
   padding: 12px 16px;
-  border: 1px solid #10a37f;
-  border-radius: 4px;
-  margin-bottom: 24px;
-  outline-color: #10a37f;
+  border: none;
+  outline-color: #1135f0;
+  background-color:#1135f0;
+  color: white;
 }
 .main ::placeholder {
-  color: #8e8ea0;
+  color: #e3d3d3;
   opacity: 1;
 }
-.main input[type="submit"] {
-  padding: 12px 0;
-  color: #fff;
-  background-color: #10a37f;
-  border: none;
-  border-radius: 4px;
-  text-align: center;
-  cursor: pointer;
-}
+
 .main .result {
   font-weight: bold;
   margin-top: 40px;
+}
+
+.main .results {
+  background-color: white;
+  border-bottom: 0px;
+  padding: 0;
+  outline-color: #1135f0;
+  height: 80%;
+  overflow-y: scroll;
+  width: 600px;
+}
+
+.main .resultContainer {
+  height: 60%;
+  transition: .5s;
+}
+
+.main .resultContainer:hover {
+  transform: scale(1.05) translateY(-3%);
+}
+
+.main .bottomBar {
+  width: 600px;
+  height: 30px;
+  background-image: url('/bottom-bar.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top;
+  margin: 0;
+  border-top: 1px solid white;
+}
+
+.main .topBar {
+  width: 600px;
+  height: 30px;
+  background-image: url('/top-bar.png');
+  background-size:contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  margin: 0;
+}
+
+.main .paragraphs {
+  padding: 0 10px 0 10px;
+}
+
+.backgroundVideo{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
 }
